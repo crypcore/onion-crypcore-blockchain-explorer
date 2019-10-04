@@ -1,35 +1,3 @@
-## Crypcore Blockchain Explorer features
-
-The key features of the Onion Monero Blockchain Explorer are:
-
- - no cookies, no web analytics trackers, no images,
- - by default no JavaScript, but can be enabled for client side decoding and proving transactions,
- - open sourced,
- - made fully in C++,
- - showing encrypted payments ID,
- - showing ring signatures,
- - showing transaction extra field,
- - showing public components of Monero addresses,
- - decoding which outputs and mixins belong to the given Monero address and viewkey,
- - can prove that you send Monero to someone,
- - detailed information about ring members, such as, their age, timescale and their ring sizes,
- - showing number of amount output indices,
- - support Monero testnet and stagnet networks,
- - tx checker and pusher for online pushing of transactions,
- - estimate possible spendings based on address and viewkey,
- - can provide total amount of all miner fees,
- - decoding encrypted payment id,
- - decoding outputs and proving txs sent to sub-address.
-
-
-## Development branch
-
-Current development branch:
-
- - https://github.com/moneroexamples/onion-monero-blockchain-explorer/tree/devel
-
-Note: `devel` branch of the explorer follows `master` branch of the monero.
-
 ## Compilation on Ubuntu 16.04/18.04
 
 ## Example compilation of Crypcore on Ubuntu 18.04
@@ -42,9 +10,9 @@ sudo apt install git build-essential cmake libboost-all-dev miniupnpc libunbound
 
 # go to home folder
 cd ~
-git clone --recursive -b release-v0.14 https://github.com/monero-project/monero.git
+git clone --recursive -b release-v0.14 https://github.com/crypcore/Crypcore.git
 
-cd monero/
+cd Crypcore/
 
 USE_SINGLE_BUILDDIR=1 make
 ```
@@ -53,16 +21,16 @@ USE_SINGLE_BUILDDIR=1 make
 ## Example compilation of master branch (i.e., development version of Monero) on Ubuntu 18.04
 
 ```bash
-# first install monero dependecines
+# first install dependecines
 sudo apt update
 
 sudo apt install git build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libcurl4-openssl-dev libgtest-dev libreadline-dev libzmq3-dev libsodium-dev libhidapi-dev libhidapi-libusb0
 
 # go to home folder
 cd ~
-git clone --recursive https://github.com/monero-project/monero.git
+git clone --recursive https://github.com/crypcore/Crypcore.git
 
-cd monero/
+cd Crypcore/
 
 USE_SINGLE_BUILDDIR=1 make
 ```
@@ -70,7 +38,7 @@ USE_SINGLE_BUILDDIR=1 make
 
 ##### Compile and run the explorer
 
-Once the Monero compiles, the explorer can be downloaded and compiled
+Once the Crypcore compiles, the explorer can be downloaded and compiled
 as follows:
 
 ```bash
@@ -81,7 +49,7 @@ cd ~
 git clone https://github.com/crypcore/onion-crypcore-blockchain-explorer.git
 
 # enter the downloaded sourced code folder
-cd onion-monero-blockchain-explorer
+cd onion-crypcore-blockchain-explorer
 
 # make a build folder and enter it
 mkdir build && cd build
@@ -99,19 +67,19 @@ To run it:
 ./xmrblocks
 ```
 
-By default it will look for blockchain in its default location i.e., `~/.bitmonero/lmdb`.
+By default it will look for blockchain in its default location i.e., `~/.crypcore/lmdb`.
 You can use `-b` option if its in different location.
 
 For example:
 
 ```bash
-./xmrblocks -b /home/mwo/non-defult-monero-location/lmdb/
+./xmrblocks -b /home/mwo/non-defult-crypcore-location/lmdb/
 ```
 
 Example output:
 
 ```bash
-[mwo@arch onion-monero-blockchain-explorer]$ ./xmrblocks
+[mwo@arch onion-crypcore-blockchain-explorer]$ ./xmrblocks
 2016-May-28 10:04:49.160280 Blockchain initialized. last block: 1056761, d0.h0.m12.s47 time ago, current difficulty: 1517857750
 (2016-05-28 02:04:49) [INFO    ] Crow/0.1 server is running, local port 8081
 ```
@@ -121,8 +89,8 @@ Go to your browser: http://127.0.0.1:8081
 ## The explorer's command line options
 
 ```
-xmrblocks, Onion Monero Blockchain Explorer:
-  -h [ --help ] [=arg(=1)] (=0)         produce help message
+xmrblocks, Onion Crypcore Blockchain Explorer:
+  -h [ --help ] [=arg(=1)] (=0)         produce help messa
   -t [ --testnet ] [=arg(=1)] (=0)      use testnet blockchain
   -s [ --stagenet ] [=arg(=1)] (=0)     use stagenet blockchain
   --enable-pusher [=arg(=1)] (=0)       enable signed transaction pusher
