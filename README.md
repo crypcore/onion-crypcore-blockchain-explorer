@@ -108,11 +108,11 @@ Once the Monero compiles, the explorer can be downloaded and compiled
 as follows:
 
 ```bash
-# go to home folder if still in ~/monero
+# go to home folder if still in ~/Crypcore
 cd ~
 
 # download the source code 
-git clone https://github.com/moneroexamples/onion-monero-blockchain-explorer.git
+git clone https://github.com/crypcore/onion-crypcore-blockchain-explorer.git
 
 # enter the downloaded sourced code folder
 cd onion-monero-blockchain-explorer
