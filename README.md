@@ -1,66 +1,4 @@
-# Onion Monero Blockchain Explorer
-
-Currently available Monero blockchain explorers have several limitations which are of
-special importance to privacy-oriented users:
-
- - they use JavaScript,
- - have images which might be used for [cookieless tracking](http://lucb1e.com/rp/cookielesscookies/),
- - track users activates through google analytics,
- - are closed sourced,
- - are not available as hidden services,
- - do not support Monero testnet nor stagenet networks,
- - have limited JSON API.
-
-
-In this example, these limitations are addressed by development of
-an Onion Monero Blockchain Explorer. The example not only shows how to use
-Monero C++ libraries, but also demonstrates how to use:
-
- - [crow](https://github.com/ipkn/crow) - C++ micro web framework
- - [mstch](https://github.com/no1msd/mstch) - C++ {{mustache}} templates
- - [json](https://github.com/nlohmann/json) - JSON for Modern C++
- - [fmt](https://github.com/fmtlib/fmt) - Small, safe and fast string formatting library
-
-## Explorer hosts
-
-Tor users:
-
- - [http://dvwae436pd7nt4bc.onion](http://dvwae436pd7nt4bc.onion) (Down for now: front-end templates are [maintained by @suhz](https://github.com/suhz/onion-monero-blockchain-explorer/tree/moneroexplorer.com/src/templates)).
-
-Clearnet versions:
- - [https://xmrchain.net/](https://xmrchain.net/) - https enabled, most popular and very stable.
- - [https://monerohash.com/explorer/](https://monerohash.com/explorer/) - nice looking one, https enabled.
- - [http://explore.MoneroWorld.com](http://explore.moneroworld.com) - same as the second one.
- - [http://monerochain.com/](http://monerochain.com/) - JSON API based, multiple nodes.   
- - [https://blox.minexmr.com/](https://blox.minexmr.com/) - - https enabled.
- - [https://community.xmr.to/explorer/mainnet/](https://community.xmr.to/explorer/mainnet/)
- - [https://exp.xmr.sk/](https://exp.xmr.sk/)
-
-
-Testnet version:
-
- - [https://testnet.xmrchain.com/](https://testnet.xmrchain.com/) - https enabled.
- - [https://community.xmr.to/explorer/testnet/](https://community.xmr.to/explorer/testnet/)
-
-Stagenet version:
- 
- - [https://stagenet.xmrchain.net/](https://stagenet.xmrchain.net/)
- - [http://139.162.60.17:8082/](http://139.162.60.17:8082/) 
- - [http://162.210.173.150:8083/](http://162.210.173.150:8083/)
- - [https://community.xmr.to/explorer/stagenet/](https://community.xmr.to/explorer/stagenet/)
-
-i2p users (main Monero network):
-
- - [http://7o4gezpkye6ekibhgpkg7v626ze4idsirapufzrefkdysa6zxhha.b32.i2p/](http://7o4gezpkye6ekibhgpkg7v626ze4idsirapufzrefkdysa6zxhha.b32.i2p/)
-
-Alternative block explorers:
-
-- [http://moneroblocks.info](http://moneroblocks.info/)
-- [https://monerovision.com](https://monerovision.com)
-- [http://chainradar.com](http://chainradar.com/xmr/blocks)
-
-
-## Onion Monero Blockchain Explorer features
+## Crypcore Blockchain Explorer features
 
 The key features of the Onion Monero Blockchain Explorer are:
 
@@ -94,13 +32,41 @@ Note: `devel` branch of the explorer follows `master` branch of the monero.
 
 ## Compilation on Ubuntu 16.04/18.04
 
+## Example compilation of Crypcore on Ubuntu 18.04
 
-#### Monero download and compilation
+```bash
+# first install monero dependecines
+sudo apt update
 
-To download and compile recent Monero follow instructions
-in the following link:
+sudo apt install git build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libcurl4-openssl-dev libgtest-dev libreadline-dev libzmq3-dev libsodium-dev libhidapi-dev libhidapi-libusb0
 
-https://github.com/moneroexamples/monero-compilation/blob/master/README.md
+# go to home folder
+cd ~
+git clone --recursive -b release-v0.14 https://github.com/monero-project/monero.git
+
+cd monero/
+
+USE_SINGLE_BUILDDIR=1 make
+```
+
+
+## Example compilation of master branch (i.e., development version of Monero) on Ubuntu 18.04
+
+```bash
+# first install monero dependecines
+sudo apt update
+
+sudo apt install git build-essential cmake libboost-all-dev miniupnpc libunbound-dev graphviz doxygen libunwind8-dev pkg-config libssl-dev libcurl4-openssl-dev libgtest-dev libreadline-dev libzmq3-dev libsodium-dev libhidapi-dev libhidapi-libusb0
+
+# go to home folder
+cd ~
+git clone --recursive https://github.com/monero-project/monero.git
+
+cd monero/
+
+USE_SINGLE_BUILDDIR=1 make
+```
+
 
 ##### Compile and run the explorer
 
